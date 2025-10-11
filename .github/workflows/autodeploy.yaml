@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Connect to server and pull latest code
         uses: appleboy/ssh-action@v0.1.10
         with:
@@ -21,3 +18,5 @@ jobs:
           script: |
             cd ~/test-project
             git pull
+            sudo systemctl daemon-reload
+            sudo systemctl restart test-script.service
