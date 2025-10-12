@@ -19,4 +19,4 @@ jobs:
             cd ~/test-project
             git pull
             sudo systemctl daemon-reload
-            sudo systemctl restart test-script.service   
+            sudo systemctl restart test-script.service  
