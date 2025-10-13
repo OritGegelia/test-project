@@ -17,6 +17,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/test-project
-            git pull
+            git fetch origin main
+            git reset --hard origin/main
             sudo systemctl daemon-reload
             sudo systemctl restart sort.service   
