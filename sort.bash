@@ -1,5 +1,4 @@
 #!/bin/bash
-# Sort processes by memory usage and log output to /var/log/sort.log
 : > /var/log/sort.log
 exec > /var/log/sort.log 2>&1
 count=0
