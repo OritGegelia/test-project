@@ -1,7 +1,6 @@
 #!/bin/bash
-#test comment
-: > /var/log/sort.log
-exec > /var/log/sort.log 2>&1
+: > ~/log/sort.log
+exec > ~/log/sort.log 2>&1
 count=0
 while true; do
 echo "Script running. Output $((count++)) $(date +%Y-%m-%d\ %H:%M:%S): $(curl -s x.x.x.x/sensor)"
