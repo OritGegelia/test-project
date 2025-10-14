@@ -1,4 +1,5 @@
 #!/bin/bash
+#test comment
 count=0
 while true; do {
   echo "Script running. Output $((count++)) $(date +%Y-%m-%d\ %H:%M:%S): $(curl -s x.x.x.x/sensor)"
