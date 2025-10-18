@@ -34,8 +34,8 @@ def n_sort():
         result.append((pid, total_mem, command_map.get(pid, "")))
     result.sort(key=lambda x: x[1], reverse=True)
     for pid, total_mem, cmd in result:
-      mem_in_mib = int(total_mem * get_memory() / 100 / 1024) if get_memory() else 0
-      total_mem = f"{mem_in_mib} MiB"
+        mem_in_mib = int(total_mem * get_memory() / 100 / 1024) if get_memory() else 0
+        total_mem = f"{mem_in_mib} MiB"
         print(f"{pid}, {cmd}, {total_mem}")
 
 if __name__ == "__main__":
