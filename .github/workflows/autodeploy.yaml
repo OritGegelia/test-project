@@ -20,4 +20,4 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             sudo systemctl daemon-reload
-            sudo systemctl restart sort.service   
+            sudo systemctl restart new-sort.service   
