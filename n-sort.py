@@ -36,7 +36,7 @@ def n_sort():
     for pid, total_mem, cmd in result:
         mem_in_mib = int(total_mem * get_memory() / 100 / 1024) if get_memory() else 0
         total_mem = f"{mem_in_mib} MiB"
-        print(f"{pid}, {cmd}, {total_mem}")
+        print(f"{pid}, {total_mem}, {cmd}")
 
 if __name__ == "__main__":
     n_sort()
