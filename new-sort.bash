@@ -4,16 +4,16 @@ count=0
 n=500
  
   while true; do {
-    # данные о памяти
+    
     total_mem=$(free -m | grep Mem | awk '{print $2}')
     used_mem=$(free -m | grep Mem | awk '{print $3}')
     available_mem=$((total_mem - used_mem))
 
     # условие
     if [ $available_mem -gt $n ]; then
-        status="памяти достаточно"
+        status="Memory is enough"
     else
-        status="Памяти недостаточно"
+        status="Memory is not enough"
     fi
 
     # строка номера вывода и текущей даты и информоация о MEMORY
