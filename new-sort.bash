@@ -25,6 +25,6 @@ n=500
     sort_result=$(ps -eo ppid,pid,%mem,cmd --no-headers | python3 n-sort.py)
     echo "PPID, MEMORY, COMMAND"
     echo "$sort_result"
-  } > ~/var/log/new-sort.log
+  } > /var/log/new-sort.log
   sleep 5  
   done
