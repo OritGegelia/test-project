@@ -18,14 +18,14 @@ def n_sort():
         ppid, pid, mem, *cmd = line.strip().split()
         tree.setdefault(ppid, []).append(pid)
         mem_map[pid] = float(mem)
-        command_map[pid] = " ".join(cmd)
+        command_map[pid] = cmd
     result = []
     for pid in tree.get("0", []):
         total_mem = dfs(pid, tree, mem_map)
-        result.append((pid, total_mem))
+        result.append((pid, total_mem, command_map.get(pid, "")))
     result.sort(key=lambda x: x[1], reverse=True)
-    for pid, total_mem in result:
-        print(f"{pid},{total_mem}")
+    for pid, total_mem, cmd in result:
+        print(f"{pid},{total_mem},{cmd}")
 
 if __name__ == "__main__":
     n_sort()
