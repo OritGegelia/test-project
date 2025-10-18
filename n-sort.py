@@ -13,10 +13,12 @@ def dfs(pid, tree, mem_map):
 def n_sort():
     tree = {}
     mem_map = {}
+    command_map = {}
     for line in sys.stdin:
         ppid, pid, mem, *cmd = line.strip().split()
         tree.setdefault(ppid, []).append(pid)
         mem_map[pid] = float(mem)
+        command_map[pid] = " ".join(cmd)
     result = []
     for pid in tree.get("0", []):
         total_mem = dfs(pid, tree, mem_map)
