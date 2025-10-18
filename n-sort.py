@@ -29,7 +29,7 @@ def n_sort():
         mem_map[pid] = float(mem)
         command_map[pid] = cmd
     result = []
-    for pid in tree.get("0", []):
+    for pid in tree.get("1", []):
         total_mem = dfs(pid, tree, mem_map)
         result.append((pid, total_mem, command_map.get(pid, "")))
     result.sort(key=lambda x: x[1], reverse=True)
